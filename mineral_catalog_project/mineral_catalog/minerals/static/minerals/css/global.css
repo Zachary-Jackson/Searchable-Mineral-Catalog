@@ -32,7 +32,7 @@ td, th { padding: 0; }
 
 html { font-size: 62.5%; }
 
-body { background-color: #CAE5D2; font-size: 1.5em; line-height: 1.6; font-weight: 400; font-family: "Cousine"; color: #666; }
+body { background-color: #A3D0D4; font-size: 1.5em; line-height: 1.6; font-weight: 400; font-family: "Cousine"; color: #666; }
 
 .bounds { max-width: 800px; margin: 0 auto; padding: 50px 0 150px; overflow: hidden; }
 .bounds--small { max-width: 600px; padding: 50px 10px 150px; }
@@ -153,7 +153,7 @@ em { color: #384033; font-weight: bold; font-style: normal; }
 a { color: #689b98; text-decoration: none; -webkit-transition: color 0.2s; -moz-transition: color 0.2s; -ms-transition: color 0.2s; -o-transition: color 0.2s; transition: color 0.2s; }
 a:hover { color: #537d7b; }
 
-input[type="text"] { background: #fff; width: 100%; color: #666; border-radius: 6px; border: 2px solid #CAE5D2; padding: 9px 15px 10px 15px; margin-bottom: 15px; outline: none; box-sizing: border-box; font-size: 1.4rem; font-family: "Work Sans", sans-serif; -webkit-appearance: none; -moz-appearance: none; appearance: none; -webkit-transition: 0.2s; -moz-transition: 0.2s; -ms-transition: 0.2s; -o-transition: 0.2s; transition: 0.2s; }
+input[type="text"] { background: #fff; width: 100%; color: #666; border-radius: 6px; border: 2px solid #A3D0D4; padding: 9px 15px 10px 15px; margin-bottom: 15px; outline: none; box-sizing: border-box; font-size: 1.4rem; font-family: "Work Sans", sans-serif; -webkit-appearance: none; -moz-appearance: none; appearance: none; -webkit-transition: 0.2s; -moz-transition: 0.2s; -ms-transition: 0.2s; -o-transition: 0.2s; transition: 0.2s; }
 input[type="text"]::-webkit-input-placeholder { font-weight: normal; }
 input[type="text"]:-moz-placeholder { font-weight: normal; }
 input[type="text"]::-moz-placeholder { font-weight: normal; }
@@ -177,27 +177,27 @@ table, p, ul { margin-bottom: 2.5rem; }
 
 .text-centered { text-align: center; }
 
-.logo { display: block; fill: #384033; position: relative; margin: 0 auto; width: 72px; }
+.logo { display: block; fill: #406b44; position: relative; margin: 0 auto; width: 72px; }
 .logo__name { margin-bottom: 0; }
 .logo__text { margin-bottom: 50px; font-size: 13px; }
-.logo--middle { fill: #406b44; }
+.logo--middle { fill: #f4b042; }
 
 .minerals__container { background-color: #fff; border-radius: 6px; list-style: none; padding: 30px 30px 20px 30px; -webkit-column-gap: 30px; -moz-column-gap: 30px; column-gap: 30px; }
 @media (min-width: 440px) and (max-width: 639px) { .minerals__container { -webkit-column-count: 2; -moz-column-count: 2; column-count: 2; } }
 @media (min-width: 640px) { .minerals__container { -webkit-column-count: 3; -moz-column-count: 3; column-count: 3; } }
 .minerals__anchor { border: solid 2px #DCF5F2; border-radius: 100px; color: #384033; display: block; font-size: 13px; text-align: center; padding: 8px 0 7px 0; width: 100%; transition: background-color 200ms ease-in-out, font-weight 200ms ease-in-out, color 200ms ease-in-out; }
 .minerals__anchor:hover { background-color: #DCF5F2; color: #384033; font-weight: bold; }
-.minerals__random { background-color: #384033; box-shadow: 0 0 100px 50px #CAE5D2; color: #fff; padding: 20px 0 20px 0; position: fixed; bottom: 0; text-align: center; width: 100%; }
+.minerals__random { background-color: #384033; box-shadow: 0 0 100px 50px #A3D0D4; color: #fff; padding: 20px 0 20px 0; position: fixed; bottom: 0; text-align: center; width: 100%; }
 .minerals__random .minerals__anchor { display: inline; color: #fff; padding: 6px 24px 5px 24px; }
 .minerals__random .minerals__anchor:hover { color: #384033; }
 
 .mineral__container { background-color: #fff; border-radius: 6px; list-style: none; padding: 0; text-align: center; }
 .mineral__name { display: block; width: 100%; margin: 0; font-size: 24px; padding: 30px 0 30px 0; }
-.mineral__image { display: block; margin: 0 auto; border: solid 2px #CAE5D2; }
+.mineral__image { display: block; margin: 0 auto; border: solid 2px #A3D0D4; }
 .mineral__image-bg { background-color: #ecfaf8; padding: 20px 0; }
 .mineral__caption { font-size: 12px; font-style: italic; padding: 10px 0 0 0; margin: 0; }
 .mineral__table { font-size: 14px; color: #384033; }
-.mineral__table td { border-color: #CAE5D2; }
+.mineral__table td { border-color: #A3D0D4; }
 .mineral__table tr:last-of-type td { border-bottom: none; padding-bottom: 0; }
 .mineral__table-container { padding: 5px 30px 0; }
 .mineral__category { font-weight: bold; width: 40%; }
