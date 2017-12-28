@@ -26,13 +26,17 @@
       <p class="logo__text text-centered">Minerals from around the globe.</p>
     </div>
     <div class="grid-100">
+      {% block content_title %}
+      {% endblock content_title %}
       {% block content %}
-      <p>This is a test.
+      <p>This is a test.</p>
       {% endblock content %}
     </div>
   </div>
   <div class="minerals__random">
-    <a class="minerals__anchor" href="/random">Show random mineral</a>
+    <a class="minerals__anchor" href="{% url 'minerals:search_group' %}">Search by group</a>
+    <a class="minerals__anchor" href="{% url 'minerals:random_mineral' %}">Show random mineral</a>
+    <a class="minerals__anchor" href="{% url 'minerals:search' %}">Advanced search</a>
   </div>
 </body>
 </html>

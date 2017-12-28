@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block content_title %}
+  <p class="search__header">Please select the group you want to see below.</p>
+{% endblock %}
+
+{% block content %}
+<ul class="minerals__container">
+  <li class="minerals__item">
+    <a class="minerals__anchor" href="{% url 'minerals:search_group_selected' pk="Arsenates" %}">Arsenates</a>
+  </li>
+  <li class="minerals__item">
+    <a class="minerals__anchor" href="{% url 'minerals:search_group_selected' pk="Borates" %}">Borates</a>
+  </li>
+  <li class="minerals__item">
+    <a class="minerals__anchor" href="{% url 'minerals:search_group_selected' pk="Carbonates" %}">Carbonates</a>
+  </li>
+  <li class="minerals__item">
+    <a class="minerals__anchor" href="{% url 'minerals:search_group_selected' pk="Halides" %}">Halides</a>
+  </li>
+  <li class="minerals__item">
+    <a class="minerals__anchor" href="{% url 'minerals:search_group_selected' pk="Native" %}">Native Elements</a>
+  </li>
+  <li class="minerals__item">
+    <a class="minerals__anchor" href="{% url 'minerals:search_group_selected' pk="Organic" %}">Organic Minerals</a>
+  </li>
+  <li class="minerals__item">
+    <a class="minerals__anchor" href="{% url 'minerals:search_group_selected' pk="oxides" %}">Oxides</a>
+  </li>
+  <li class="minerals__item">
+    <a class="minerals__anchor" href="{% url 'minerals:search_group_selected' pk="Silicates" %}">Silicates</a>
+  </li>
+  <li class="minerals__item">
+    <a class="minerals__anchor" href="{% url 'minerals:search_group_selected' pk="Sulfates" %}">Sulfates</a>
+  </li>
+  <li class="minerals__item">
+    <a class="minerals__anchor" href="{% url 'minerals:search_group_selected' pk="Sulfides" %}">Sulfides</a>
+  </li>
+  <li class="minerals__item">
+    <a class="minerals__anchor" href="{% url 'minerals:search_group_selected' pk="Sulfosalts" %}">Sulfosalts</a>
+  </li>
+  <li class="minerals__item">
+    <a class="minerals__anchor" href="{% url 'minerals:search_group_selected' pk="Phosphates" %}">Phosphates</a>
+  </li>
+  <li class="minerals__item">
+    <a class="minerals__anchor" href="{% url 'minerals:search_group_selected' pk="Other" %}">Other</a>
+  </li>
+</ul>
+{% endblock %}

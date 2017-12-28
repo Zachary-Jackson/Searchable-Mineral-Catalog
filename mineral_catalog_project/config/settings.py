@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'debug_toolbar',
+    # 'debug_toolbar',
     'mineral_catalog.minerals',
 ]
 
@@ -122,8 +122,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-DEBUG_TOOLBAR_CONFIG = {
-    'SHOW_TOOLBAR_CALLBACK': lambda x: True
-}
+# In order to run tests the following Debug toolbar setting must be
+# commented out.
 
-DEBUG_TOOLBAR_PATCH_SETTINGS = False
+# DEBUG_TOOLBAR_CONFIG = {
+#     'SHOW_TOOLBAR_CALLBACK': lambda x: True
+# }
+#
+# DEBUG_TOOLBAR_PATCH_SETTINGS = False

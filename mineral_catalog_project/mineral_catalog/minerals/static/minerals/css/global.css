@@ -202,3 +202,9 @@ table, p, ul { margin-bottom: 2.5rem; }
 .mineral__table-container { padding: 5px 30px 0; }
 .mineral__category { font-weight: bold; width: 40%; }
 .mineral__formula { font-size: 12px; }
+
+/* Custom CSS by Zachary Jackson. I also edited some colors above.*/
+.search__header {
+  text-align: center;
+  margin-top: .1rem;
+}

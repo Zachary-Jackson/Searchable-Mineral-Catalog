@@ -110,3 +110,17 @@ class MineralViewsTests(TestCase):
         # common to both mineral and mineral2
         self.assertContains(resp, self.mineral.optical_properties)
         self.assertContains(resp, self.mineral.diaphaneity)
+
+    def test_search_view(self):
+        '''This tests the main search view.'''
+        resp = self.client.get(reverse('minerals:search'))
+        self.assertEqual(resp.status_code, 200)
+        self.assertTemplateUsed(resp, 'minerals/search.html')
+        self.assertContains(resp, 'Welcome to the search page!')
+
+    def test_search_group_view(self):
+        '''This tests the group search view.'''
+        resp = self.client.get(reverse('minerals:search_group'))
+        self.assertEqual(resp.status_code, 200)
+        self.assertTemplateUsed(resp, 'minerals/search_group.html')
+        self.assertContains(resp, 'Please select the group you want')

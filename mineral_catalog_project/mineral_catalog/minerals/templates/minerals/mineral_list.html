@@ -1,5 +1,9 @@
 {% extends "layout.html" %}
 
+{% block content_title %}
+  <p class="search__header">{{ content_title }}</p>
+{% endblock %}
+
 {% block content %}
 <ul class="minerals__container">
   {% for mineral in minerals %}

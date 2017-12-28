@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+
+{% block content_title %}
+  <p class="search__header">Welcome to the search page! Please select a search option below.</p>
+{% endblock %}
+
+{% block content %}
+<ul class="minerals__container">
+  <li class="minerals__item">
+    <a class="minerals__anchor" href="/search/letter">Search Alphabetically</a>
+  </li>
+  <li class="minerals__item">
+    <a class="minerals__anchor" href="/search/color">Search by Color</a>
+  </li>
+  <li class="minerals__item">
+    <a class="minerals__anchor" href="/search/group">Search by Group</a>
+  </li>
+  <li class="minerals__item">
+    <a class="minerals__anchor" href="/search/text">Search by Text</a>
+  </li>
+  <li class="minerals__item">
+    <a class="minerals__anchor" href="/search/mohsscale">Search by Mohs Scale Hardness</a>
+  </li>
+</ul>
+{% endblock %}
