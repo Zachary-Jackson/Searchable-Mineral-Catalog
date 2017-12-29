@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content_title %}
+  <p class="search__header">{{ content_title }}</p>
+{% endblock %}
+
+{% block content %}
+<ul class="minerals__container">
+  {% for letter in letters %}
+  <li class="minerals__item">
+    <a class="minerals__anchor" href="{% url 'minerals:search_letter_selected' pk=letter %}">{{letter}}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

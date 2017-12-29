@@ -1,3 +1,5 @@
+import collections
+import string
 import random
 
 from django.shortcuts import get_object_or_404, render
@@ -36,6 +38,29 @@ def search(request):
     return render(request, 'minerals/search.html')
 
 
+def search_letter(request):
+    '''This takes the user to the search letter page.'''
+    letters = string.ascii_uppercase
+    letters = collections.OrderedDict.fromkeys(letters)
+    content_title = "Please select the first letter for the mineral you want."
+    return render(request, 'minerals/search_letter.html',
+                  {'letters': letters, 'content_title': content_title})
+
+
+def search_letter_selected(request, pk):
+    '''This returns the search results for a letter the user has chosen.'''
+    mineral_list = Mineral.objects.all()
+    minerals = []
+    # This gets every mineral that matches the pk.
+    for item in mineral_list:
+        if item.name[0].upper() == pk.upper():
+            minerals.append(item)
+    content_title = ("You are searching by the letter " + pk.title() + ".")
+    return render(
+        request, 'minerals/mineral_list.html',
+        {'minerals': minerals, 'content_title': content_title})
+
+
 def search_group(request):
     '''This takes the user to the search group page.'''
     return render(request,
@@ -44,8 +69,8 @@ def search_group(request):
 
 def search_group_selected(request, pk):
     '''This returns the search results for a group the user searched.'''
-    mineral = Mineral.objects.all().filter(group__icontains=pk)
+    minerals = Mineral.objects.all().filter(group__icontains=pk)
     content_title = ("You are searching by " + pk.title() + ".")
     return render(
         request, 'minerals/mineral_list.html',
-        {'minerals': mineral, 'content_title': content_title})
+        {'minerals': minerals, 'content_title': content_title})

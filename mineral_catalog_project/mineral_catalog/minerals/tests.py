@@ -37,7 +37,8 @@ class MineralViewsTests(TestCase):
     '''This tests to see if the mineral views work.'''
     def setUp(self):
         '''This sets up a Mineral instance to test.'''
-        self.mineral = Mineral.objects.create(
+        # This creates a mineral for the database
+        Mineral.objects.create(
             name='Abelsonite',
             image_filename='240px-Abelsonite.jpg',
             image_caption='Abelsonite from the Green River Formation',
@@ -59,6 +60,10 @@ class MineralViewsTests(TestCase):
             specific_gravity='7.20 - 7.22',
             group='Sulfides'
         )
+
+        # This gets the first Mineral object out of the database for tests.
+        self.mineral = Mineral.objects.get(pk=1)
+
         self.mineral2 = Mineral.objects.create(
             name='Salt',
             image_filename='240px-Salt.jpg',
@@ -124,3 +129,26 @@ class MineralViewsTests(TestCase):
         self.assertEqual(resp.status_code, 200)
         self.assertTemplateUsed(resp, 'minerals/search_group.html')
         self.assertContains(resp, 'Please select the group you want')
+
+    def test_search_group_selected_view(self):
+        '''This tests the group search selected view.'''
+        resp = self.client.get(reverse('minerals:search_group_selected',
+                                       kwargs={'pk': 'Sulfides'}))
+        self.assertEqual(resp.status_code, 200)
+        self.assertTemplateUsed(resp, 'minerals/mineral_list.html')
+        self.assertContains(resp, self.mineral.name)
+
+    def test_search_letter_view(self):
+        '''This tests the letter search_view.'''
+        resp = self.client.get(reverse('minerals:search_letter'))
+        self.assertEqual(resp.status_code, 200)
+        self.assertTemplateUsed(resp, 'minerals/search_letter.html')
+        self.assertContains(resp, 'Please select the first letter for the ')
+
+    def test_search_letter_selected_view(self):
+        '''This tests the letter search selected view.'''
+        resp = self.client.get(reverse('minerals:search_letter_selected',
+                                       kwargs={'pk': 'A'}))
+        self.assertEqual(resp.status_code, 200)
+        self.assertTemplateUsed(resp, 'minerals/mineral_list.html')
+        self.assertContains(resp, self.mineral.name)
