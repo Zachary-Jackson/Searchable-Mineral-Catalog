@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content_title %}
+  <p class="search__header">{{ content_title }}</p>
+{% endblock %}
+
+{% block content %}
+<ul class="minerals__container">
+  <li class="minerals__item">
+    <a class="minerals__anchor" href="{% url 'minerals:search_crystal_system_selected' pk="cubic" %}">Cubic</a>
+  </li>
+  <li class="minerals__item">
+    <a class="minerals__anchor" href="{% url 'minerals:search_crystal_system_selected' pk="hexagonal" %}">Hexagonal</a>
+  </li>
+  <li class="minerals__item">
+    <a class="minerals__anchor" href="{% url 'minerals:search_crystal_system_selected' pk="monoclinic" %}">Monoclinic</a>
+  </li>
+  <li class="minerals__item">
+    <a class="minerals__anchor" href="{% url 'minerals:search_crystal_system_selected' pk="triclinic" %}">Triclinic</a>
+  </li>
+  <li class="minerals__item">
+    <a class="minerals__anchor" href="{% url 'minerals:search_crystal_system_selected' pk="tetragonal" %}">Tetragonal</a>
+  </li>
+  <li class="minerals__item">
+    <a class="minerals__anchor" href="{% url 'minerals:search_crystal_system_selected' pk="trigonal" %}">Trigonal</a>
+  </li>
+  <li class="minerals__item">
+    <a class="minerals__anchor" href="{% url 'minerals:search_crystal_system_selected' pk="orthorhombic" %}">Orthorhombic</a>
+  </li>
+
+</ul>
+{% endblock %}

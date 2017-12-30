@@ -6,10 +6,12 @@
 
 {% block content %}
 <ul class="minerals__container">
+
   {% for mineral in minerals %}
   <li class="minerals__item">
     <a class="minerals__anchor" href="{% url 'minerals:detail' pk=mineral.pk %}">{{mineral.name}}</a>
   </li>
   {% endfor %}
+  
 </ul>
 {% endblock %}

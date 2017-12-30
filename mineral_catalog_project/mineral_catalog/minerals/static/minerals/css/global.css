@@ -208,3 +208,20 @@ table, p, ul { margin-bottom: 2.5rem; }
   text-align: center;
   margin-top: .1rem;
 }
+
+.search__box {
+  text-align: center;
+  font-size: 15px;
+  width: 30rem;
+  border-radius: 1rem;
+
+}
+
+.search__button {
+  border-radius: 10px;
+}
+
+.help__paragraph {
+  background-color: white;
+  border-radius: 10px;
+}

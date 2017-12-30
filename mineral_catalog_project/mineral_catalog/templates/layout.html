@@ -23,7 +23,18 @@
         </svg>
         <h1 class="logo__name text-centered">Mineral Catalog</h1>
       </a>
-      <p class="logo__text text-centered">Minerals from around the globe.</p>
+
+      <form action="{% url 'minerals:search_term_selected' %}" method="GET">
+      <p class="logo__text text-centered">
+        <input class="search__box" placeholder="Minerals from around the globe." name="search">
+
+        <!-- add button later
+        <button class="search__button" type="button">Search</button>
+        -->
+
+      </p>
+      </form>
+
     </div>
     <div class="grid-100">
       {% block content_title %}

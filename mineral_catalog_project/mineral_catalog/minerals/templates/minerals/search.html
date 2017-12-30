@@ -14,13 +14,16 @@
     <a class="minerals__anchor" href="{% url 'minerals:search_letter' %}">Search by Color</a>
   </li>
   <li class="minerals__item">
+    <a class="minerals__anchor" href="{% url 'minerals:search_crystal_system' %}">Search by Crystal System</a>
+  </li>
+  <li class="minerals__item">
     <a class="minerals__anchor" href="{% url 'minerals:search_group' %}">Search by Group</a>
   </li>
   <li class="minerals__item">
-    <a class="minerals__anchor" href="{% url 'minerals:search_letter' %}">Search by Text</a>
+    <a class="minerals__anchor" href="{% url 'minerals:search_help' %}">Search all data by Term</a>
   </li>
   <li class="minerals__item">
-    <a class="minerals__anchor" href="{% url 'minerals:search_letter' %}">Search by Mohs Scale Hardness</a>
+    <a class="minerals__anchor" href="{% url 'minerals:search_help' %}">Searching help</a>
   </li>
 </ul>
 {% endblock %}
