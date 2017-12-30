@@ -6,6 +6,11 @@ urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'detail/(?P<pk>\d+)/$', views.detail, name='detail'),
     url(r'random', views.random_mineral, name='random_mineral'),
+    url(r'search/color/user',
+        views.search_color_user, name='search_color_user'),
+    url(r'search/color/(?P<pk>[\w\-]+)/$',
+        views.search_color_selected, name='search_color_selected'),
+    url(r'search/color', views.search_color, name='search_color'),
     url(r'search/crystalsystem/(?P<pk>[\w\-]+)/$',
         views.search_crystal_system_selected,
         name='search_crystal_system_selected'),
@@ -22,8 +27,3 @@ urlpatterns = [
     url(r'search/help/', views.search_help, name='search_help'),
     url(r'search', views.search, name='search'),
 ]
-
-# unimplemented url patterns
-# url(r'search/mohsscale/(?P<num1>\d+)/(?P<num2>\d+)/$',
-#     views.search_mohsscale_selected, name='search_mohsscale_selected'),
-# url(r'search/mohsscale', views.search_mohsscale, name='search_mohsscale'),

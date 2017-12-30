@@ -39,6 +39,50 @@ def search_help(request):
     return render(request, 'minerals/help.html')
 
 
+def search_color(request):
+    '''This takes the user to the search by color page.'''
+    # This is a list of collors guarenteed to get results.
+    colors = ['amber', 'amethyst', 'apple', 'azure', 'black', 'blue', 'blood',
+              'bluish', 'brass', 'bronze', 'brown', 'colorless', 'copper',
+              'cream', 'crimson', 'cyan', 'dark', 'dark', 'dull', 'dull',
+              'emerald', 'gold', 'gray', 'green', 'greenish', 'grey', 'indigo',
+              'iridescent', 'lavender', 'lead', 'metallic', 'olive', 'orange',
+              'peach', 'pale', 'pink', 'pistachio', 'purple', 'purplish',
+              'red', 'rose', 'rosy', 'rosy', 'ruby', 'silver', 'steel',
+              'steel', 'transparent', 'turquoise', 'violet', 'white', 'yellow']
+
+    colors = collections.OrderedDict.fromkeys(colors)
+    return render(request, 'minerals/search_color.html',
+                  {'colors': colors})
+
+
+def search_color_selected(request, pk=None):
+    '''This takes the user to crystal system search page.'''
+    minerals = Mineral.objects.all().filter(color__icontains=pk)
+    content_title = (
+        (str(len(minerals)) + " results for the color  "))
+    content_end = pk
+    return render(request, 'minerals/mineral_list.html',
+                  {'minerals': minerals, 'content_title': content_title,
+                   'content_end': content_end})
+
+
+def search_color_user(request):
+    '''This returns the search results for a color the user entered.'''
+    search = request.GET.get('search')
+    # This searches for the user's color.
+    minerals = Mineral.objects.all().filter(color__icontains=search)
+
+    content_title = (
+        (str(len(minerals)) + " results for the color "))
+    content_end = search
+
+    return render(
+        request, 'minerals/mineral_list.html',
+        {'minerals': minerals, 'content_title': content_title,
+         'content_end': content_end})
+
+
 def search_crystal_system(request):
     '''This takes the user to crystal system search page.'''
     content_title = 'Please select the crystal system you want'
@@ -49,10 +93,12 @@ def search_crystal_system(request):
 def search_crystal_system_selected(request, pk):
     '''This takes the user to crystal system search page.'''
     minerals = Mineral.objects.all().filter(crystal_system__icontains=pk)
-    content_title = ("You are searching by the crystal system  "
-                     + pk.title())
+    content_title = (
+        (str(len(minerals)) + " results for the crystal system  "))
+    content_end = (pk.title())
     return render(request, 'minerals/mineral_list.html',
-                  {'minerals': minerals, 'content_title': content_title})
+                  {'minerals': minerals, 'content_title': content_title,
+                   'content_end': content_end})
 
 
 def search_letter(request):
@@ -76,10 +122,14 @@ def search_letter_selected(request, pk):
         if item.name[0].upper() == pk.upper():
             minerals.append(item)
 
-    content_title = ("You are searching by the letter " + pk.title())
+    content_title = (
+        (str(len(minerals)) + " results for the letter  "))
+    content_end = (pk.title())
+
     return render(
         request, 'minerals/mineral_list.html',
-        {'minerals': minerals, 'content_title': content_title})
+        {'minerals': minerals, 'content_title': content_title,
+         'content_end': content_end})
 
 
 def search_group(request):
@@ -99,10 +149,14 @@ def search_group_selected(request, pk):
     elif pk.lower() == 'native':
         pk = 'Native Elements'
 
-    content_title = ("You are searching by " + pk.title() + ".")
+    content_title = (
+        (str(len(minerals)) + " results for the group "))
+    content_end = (pk.title())
+
     return render(
         request, 'minerals/mineral_list.html',
-        {'minerals': minerals, 'content_title': content_title})
+        {'minerals': minerals, 'content_title': content_title,
+         'content_end': content_end})
 
 
 def search_term_selected(request):
@@ -123,31 +177,11 @@ def search_term_selected(request):
         Q(crystal_habit__icontains=search) |
         Q(specific_gravity__icontains=search) | Q(group__icontains=search))
 
-    content_title = ("You are searching by " + search.title())
+    content_title = (
+        (str(len(minerals)) + " results for the search term "))
+    content_end = search
+
     return render(
         request, 'minerals/mineral_list.html',
-        {'minerals': minerals, 'content_title': content_title})
-
-
-# The following is mohs scale harness functions to be written.
-#
-# def search_mohsscale(request):
-#     '''This takes the user to the search mohs scale hardness page.'''
-#     return render(request, 'minerals/search_mohsscale.html')
-#
-#
-# def search_mohsscale_selected(request, num1, num2):
-#     '''This searches for minerals based on a range of mohs scale harness.'''
-#     # Gets two numbers as the pk
-#     # num1 = request.GET.get('num1')
-#     # num2 = request.GET.get('num2')
-#     num1 = num1
-#     num2 = num2
-#
-#     minerals = Mineral.objects.all().filter(
-#         mohs_scale_hardness__gte=num1,  mohs_scale_hardness__lte=num2)
-#     content_title = 'You are searching by a mohs scale harness of '
-#     content_title += (num1 + '-' + num2)
-#     return render(
-#         request, 'minerals/mineral_list.html',
-#         {'minerals': minerals, 'content_title': content_title})
+        {'minerals': minerals, 'content_title': content_title,
+         'content_end': content_end})

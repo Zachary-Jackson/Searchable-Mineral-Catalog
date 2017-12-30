@@ -217,6 +217,14 @@ table, p, ul { margin-bottom: 2.5rem; }
 
 }
 
+.large__search__box {
+  text-align: center;
+  font-size: 18px;
+  width: 45rem;
+  border-radius: 1rem;
+
+}
+
 .search__button {
   border-radius: 10px;
 }

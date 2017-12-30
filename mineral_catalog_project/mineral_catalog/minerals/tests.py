@@ -124,11 +124,28 @@ class MineralViewsTests(TestCase):
         self.assertContains(resp, 'Welcome to the search page!')
 
     def test_search_help_view(self):
-        '''This tests the search help _view.'''
+        '''This tests the search help view.'''
         resp = self.client.get(reverse('minerals:search_help'))
         self.assertEqual(resp.status_code, 200)
         self.assertTemplateUsed(resp, 'minerals/help.html')
         self.assertContains(resp, 'This page is for help on how to')
+
+    def test_search_color_view(self):
+        '''This tests the search color view.'''
+        resp = self.client.get(reverse('minerals:search_color'))
+        self.assertEqual(resp.status_code, 200)
+        self.assertTemplateUsed(resp, 'minerals/search_color.html')
+        self.assertContains(resp, 'amber')
+        self.assertContains(resp, 'red')
+
+    def test_search_color_selected_view(self):
+        '''This test the crystal system selected view.'''
+        resp = self.client.get(reverse(
+            'minerals:search_color_selected',
+            kwargs={'pk': 'Pink'}))
+        self.assertEqual(resp.status_code, 200)
+        self.assertTemplateUsed(resp, 'minerals/mineral_list.html')
+        self.assertContains(resp, self.mineral.name)
 
     def test_search_crystal_system_view(self):
         '''This tests the crystal system search view.'''

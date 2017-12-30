@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content_title %}
+  <p class="search__header">{{ content_title }}</p>
+
+  <form action="{% url 'minerals:search_color_user' %}" method="GET">
+  <p class="logo__text text-centered">
+    <input class="large__search__box" placeholder="Search colors here or use results bellow" name="search">
+  </p>
+  </form>
+{% endblock content_title %}
+
+{% block content %}
+<ul class="minerals__container">
+  {% for color in colors %}
+  <li class="minerals__item">
+    <a class="minerals__anchor" href="{% url 'minerals:search_color_selected' pk=color %}">{{color}}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
