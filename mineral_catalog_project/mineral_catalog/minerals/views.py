@@ -11,7 +11,10 @@ from .models import Mineral
 def home(request):
     '''This is the homepage for the minerals app.'''
     mineral = Mineral.objects.all()
-    return render(request, 'minerals/mineral_list.html', {'minerals': mineral})
+    content_title = ("Here are all " + str(len(mineral)) +
+                     " minerals in the database")
+    return render(request, 'minerals/mineral_list.html',
+                  {'minerals': mineral, 'content_title': content_title})
 
 
 def detail(request, pk):

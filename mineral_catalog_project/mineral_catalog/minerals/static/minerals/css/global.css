@@ -206,7 +206,7 @@ table, p, ul { margin-bottom: 2.5rem; }
 /* Custom CSS by Zachary Jackson. I also edited some colors above.*/
 .search__header {
   text-align: center;
-  margin-top: .1rem;
+  margin-top: 2rem;
 }
 
 .search__box {
@@ -232,4 +232,16 @@ table, p, ul { margin-bottom: 2.5rem; }
 .help__paragraph {
   background-color: white;
   border-radius: 10px;
+}
+
+.letters {
+margin: 8px 5px;
+text-align: center;
+width: 30px;
+height: 20px;
+font-size: 12px;
+display: inline-block;
+float: none;
+background-color: white;
+border-radius: 10px;
 }

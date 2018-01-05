@@ -24,20 +24,53 @@
         <h1 class="logo__name text-centered">Mineral Catalog</h1>
       </a>
 
+      <!-- This is the main search bar at the top of the page. -->
       <form action="{% url 'minerals:search_term_selected' %}" method="GET">
       <p class="logo__text text-centered">
         <input class="search__box" placeholder="Minerals from around the globe." name="search">
       </p>
       </form>
-
     </div>
+
     <div class="grid-100">
+
+      <!-- This is hardcoded into layout.html because it is not likely
+      to change and it prevents letters from being passed in all views. -->
+      <a href="{% url 'minerals:search_letter_selected' pk="a" %}"><letters class="letters">A</a></letters>
+      <a href="{% url 'minerals:search_letter_selected' pk="b" %}"><letters class="letters">B</a></letters>
+      <a href="{% url 'minerals:search_letter_selected' pk="c" %}"><letters class="letters">C</a></letters>
+      <a href="{% url 'minerals:search_letter_selected' pk="d" %}"><letters class="letters">D</a></letters>
+      <a href="{% url 'minerals:search_letter_selected' pk="e" %}"><letters class="letters">E</a></letters>
+      <a href="{% url 'minerals:search_letter_selected' pk="f" %}"><letters class="letters">F</a></letters>
+      <a href="{% url 'minerals:search_letter_selected' pk="g" %}"><letters class="letters">G</a></letters>
+      <a href="{% url 'minerals:search_letter_selected' pk="h" %}"><letters class="letters">H</a></letters>
+      <a href="{% url 'minerals:search_letter_selected' pk="i" %}"><letters class="letters">I</a></letters>
+      <a href="{% url 'minerals:search_letter_selected' pk="j" %}"><letters class="letters">J</a></letters>
+      <a href="{% url 'minerals:search_letter_selected' pk="k" %}"><letters class="letters">K</a></letters>
+      <a href="{% url 'minerals:search_letter_selected' pk="l" %}"><letters class="letters">L</a></letters>
+      <a href="{% url 'minerals:search_letter_selected' pk="m" %}"><letters class="letters">M</a></letters>
+      <a href="{% url 'minerals:search_letter_selected' pk="n" %}"><letters class="letters">N</a></letters>
+      <a href="{% url 'minerals:search_letter_selected' pk="o" %}"><letters class="letters">O</a></letters>
+      <a href="{% url 'minerals:search_letter_selected' pk="p" %}"><letters class="letters">P</a></letters>
+      <a href="{% url 'minerals:search_letter_selected' pk="q" %}"><letters class="letters">Q</a></letters>
+      <a href="{% url 'minerals:search_letter_selected' pk="r" %}"><letters class="letters">R</a></letters>
+      <a href="{% url 'minerals:search_letter_selected' pk="s" %}"><letters class="letters">S</a></letters>
+      <a href="{% url 'minerals:search_letter_selected' pk="t" %}"><letters class="letters">T</a></letters>
+      <a href="{% url 'minerals:search_letter_selected' pk="u" %}"><letters class="letters">U</a></letters>
+      <a href="{% url 'minerals:search_letter_selected' pk="v" %}"><letters class="letters">V</a></letters>
+      <a href="{% url 'minerals:search_letter_selected' pk="w" %}"><letters class="letters">W</a></letters>
+      <a href="{% url 'minerals:search_letter_selected' pk="x" %}"><letters class="letters">X</a></letters>
+      <a href="{% url 'minerals:search_letter_selected' pk="y" %}"><letters class="letters">Y</a></letters>
+      <a href="{% url 'minerals:search_letter_selected' pk="z" %}"><letters class="letters">Z</a></letters>
+
       {% block content_title %}
       {% endblock content_title %}
+
       {% block content %}
       <p>This is a test.</p>
       {% endblock content %}
     </div>
+
   </div>
   <div class="minerals__random">
     <a class="minerals__anchor" href="{% url 'minerals:search_group' %}">Search by group</a>
