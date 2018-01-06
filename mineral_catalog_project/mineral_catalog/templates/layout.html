@@ -12,6 +12,94 @@
   <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,500' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Cousine' rel='stylesheet' type='text/css'>
 </head>
+
+
+<!-- This is the group search bar on the left side of the desktop view. -->
+  <div class="vertical__menu">
+   <a href="{% url 'minerals:search_group'%}" class="main__group">Groups</a>
+  {% if group.arsenates %}
+    <a href="{% url 'minerals:search_group_selected' pk="Arsenates" %}" class="selected">Arsenates</a>
+  {% endif %}
+  {% if not group.arsenates %}
+  <a href="{% url 'minerals:search_group_selected' pk="Arsenates" %}" class="unselected">Arsenates</a>
+  {% endif %}
+  {% if group.borates %}
+    <a href="{% url 'minerals:search_group_selected' pk="Borates" %}" class="selected">Borates</a>
+  {% endif %}
+  {% if not group.borates %}
+  <a href="{% url 'minerals:search_group_selected' pk="Borates" %}" class="unselected">Borates</a>
+  {% endif %}
+  {% if group.carbonates %}
+    <a href="{% url 'minerals:search_group_selected' pk="Carbonates" %}" class="selected">Carbonates</a>
+  {% endif %}
+  {% if not group.carbonates %}
+  <a href="{% url 'minerals:search_group_selected' pk="Carbonates" %}" class="unselected">Carbonates</a>
+  {% endif %}
+  {% if group.halides %}
+    <a href="{% url 'minerals:search_group_selected' pk="Halides" %}" class="selected">Halides</a>
+  {% endif %}
+  {% if not group.halides %}
+  <a href="{% url 'minerals:search_group_selected' pk="Halides" %}" class="unselected">Halides</a>
+  {% endif %}
+  {% if group.native %}
+    <a href="{% url 'minerals:search_group_selected' pk="native" %}" class="selected">Native Elements</a>
+  {% endif %}
+  {% if not group.native %}
+  <a href="{% url 'minerals:search_group_selected' pk="native" %}" class="unselected">Native Elements</a>
+  {% endif %}
+  {% if group.organic %}
+    <a href="{% url 'minerals:search_group_selected' pk="Organic" %}" class="selected">Organic Minerals</a>
+  {% endif %}
+  {% if not group.organic %}
+  <a href="{% url 'minerals:search_group_selected' pk="Organic" %}" class="unselected">Organic Minerals</a>
+  {% endif %}
+  {% if group.oxides %}
+    <a href="{% url 'minerals:search_group_selected' pk="Oxides" %}" class="selected">Oxides</a>
+  {% endif %}
+  {% if not group.oxides %}
+  <a href="{% url 'minerals:search_group_selected' pk="Oxides" %}" class="unselected">Oxides</a>
+  {% endif %}
+  {% if group.silicates %}
+    <a href="{% url 'minerals:search_group_selected' pk="Silicates" %}" class="selected">Silicates</a>
+  {% endif %}
+  {% if not group.silicates %}
+  <a href="{% url 'minerals:search_group_selected' pk="Silicates" %}" class="unselected">Silicates</a>
+  {% endif %}
+  {% if group.sulfates %}
+    <a href="{% url 'minerals:search_group_selected' pk="Sulfates" %}" class="selected">Sulfates</a>
+  {% endif %}
+  {% if not group.sulfates %}
+  <a href="{% url 'minerals:search_group_selected' pk="Sulfates" %}" class="unselected">Sulfates</a>
+  {% endif %}
+  {% if group.sulfides %}
+    <a href="{% url 'minerals:search_group_selected' pk="Sulfides" %}" class="selected">Sulfides</a>
+  {% endif %}
+  {% if not group.sulfides %}
+  <a href="{% url 'minerals:search_group_selected' pk="Sulfides" %}" class="unselected">Sulfides</a>
+  {% endif %}
+  {% if group.sulfosalts %}
+    <a href="{% url 'minerals:search_group_selected' pk="Sulfosalts" %}" class="selected">Sulfosalts</a>
+  {% endif %}
+  {% if not group.sulfosalts %}
+  <a href="{% url 'minerals:search_group_selected' pk="Sulfosalts" %}" class="unselected">Sulfosalts</a>
+  {% endif %}
+  {% if group.phosphates %}
+    <a href="{% url 'minerals:search_group_selected' pk="Phosphates" %}" class="selected">Phosphates</a>
+  {% endif %}
+  {% if not group.phosphates %}
+  <a href="{% url 'minerals:search_group_selected' pk="Phosphates" %}" class="unselected">Phosphates</a>
+  {% endif %}
+  {% if group.other %}
+    <a href="{% url 'minerals:search_group_selected' pk="Other" %}" class="selected">Other</a>
+  {% endif %}
+  {% if not group.other %}
+  <a href="{% url 'minerals:search_group_selected' pk="Other" %}" class="unselected">Other</a>
+  {% endif %}
+ </div>
+<!-- End of desktop view's group search bar. -->
+
+
+</div>
 <body>
   {% block div %}<div class="bounds">{% endblock %}
     <div class="grid-100">
@@ -36,32 +124,163 @@
 
       <!-- This is hardcoded into layout.html because it is not likely
       to change and it prevents letters from being passed in all views. -->
+      {% if letter.a %}
+        <a href="{% url 'minerals:search_letter_selected' pk="a" %}"><letters class="letters selected">A</a></letters>
+      {% endif %}
+      {% if not letter.a %}
       <a href="{% url 'minerals:search_letter_selected' pk="a" %}"><letters class="letters">A</a></letters>
+      {% endif %}
+      {% if letter.b %}
+        <a href="{% url 'minerals:search_letter_selected' pk="b" %}"><letters class="letters selected">B</a></letters>
+      {% endif %}
+      {% if not letter.b %}
       <a href="{% url 'minerals:search_letter_selected' pk="b" %}"><letters class="letters">B</a></letters>
+      {% endif %}
+      {% if letter.c %}
+        <a href="{% url 'minerals:search_letter_selected' pk="c" %}"><letters class="letters selected">C</a></letters>
+      {% endif %}
+      {% if not letter.c %}
       <a href="{% url 'minerals:search_letter_selected' pk="c" %}"><letters class="letters">C</a></letters>
+      {% endif %}
+      {% if letter.d %}
+        <a href="{% url 'minerals:search_letter_selected' pk="d" %}"><letters class="letters selected">D</a></letters>
+      {% endif %}
+      {% if not letter.d %}
       <a href="{% url 'minerals:search_letter_selected' pk="d" %}"><letters class="letters">D</a></letters>
+      {% endif %}
+      {% if letter.e %}
+        <a href="{% url 'minerals:search_letter_selected' pk="e" %}"><letters class="letters selected">E</a></letters>
+      {% endif %}
+      {% if not letter.e %}
       <a href="{% url 'minerals:search_letter_selected' pk="e" %}"><letters class="letters">E</a></letters>
+      {% endif %}
+      {% if letter.f %}
+        <a href="{% url 'minerals:search_letter_selected' pk="f" %}"><letters class="letters selected">F</a></letters>
+      {% endif %}
+      {% if not letter.f %}
       <a href="{% url 'minerals:search_letter_selected' pk="f" %}"><letters class="letters">F</a></letters>
+      {% endif %}
+      {% if letter.g %}
+        <a href="{% url 'minerals:search_letter_selected' pk="g" %}"><letters class="letters selected">G</a></letters>
+      {% endif %}
+      {% if not letter.g %}
       <a href="{% url 'minerals:search_letter_selected' pk="g" %}"><letters class="letters">G</a></letters>
+      {% endif %}
+      {% if letter.h %}
+        <a href="{% url 'minerals:search_letter_selected' pk="h" %}"><letters class="letters selected">H</a></letters>
+      {% endif %}
+      {% if not letter.h %}
       <a href="{% url 'minerals:search_letter_selected' pk="h" %}"><letters class="letters">H</a></letters>
+      {% endif %}
+      {% if letter.i %}
+        <a href="{% url 'minerals:search_letter_selected' pk="i" %}"><letters class="letters selected">I</a></letters>
+      {% endif %}
+      {% if not letter.i %}
       <a href="{% url 'minerals:search_letter_selected' pk="i" %}"><letters class="letters">I</a></letters>
+      {% endif %}
+      {% if letter.j %}
+        <a href="{% url 'minerals:search_letter_selected' pk="j" %}"><letters class="letters selected">J</a></letters>
+      {% endif %}
+      {% if not letter.j %}
       <a href="{% url 'minerals:search_letter_selected' pk="j" %}"><letters class="letters">J</a></letters>
+      {% endif %}
+      {% if letter.k %}
+        <a href="{% url 'minerals:search_letter_selected' pk="k" %}"><letters class="letters selected">K</a></letters>
+      {% endif %}
+      {% if not letter.k %}
       <a href="{% url 'minerals:search_letter_selected' pk="k" %}"><letters class="letters">K</a></letters>
+      {% endif %}
+      {% if letter.l %}
+        <a href="{% url 'minerals:search_letter_selected' pk="l" %}"><letters class="letters selected">L</a></letters>
+      {% endif %}
+      {% if not letter.l %}
       <a href="{% url 'minerals:search_letter_selected' pk="l" %}"><letters class="letters">L</a></letters>
+      {% endif %}
+      {% if letter.m %}
+        <a href="{% url 'minerals:search_letter_selected' pk="m" %}"><letters class="letters selected">M</a></letters>
+      {% endif %}
+      {% if not letter.m %}
       <a href="{% url 'minerals:search_letter_selected' pk="m" %}"><letters class="letters">M</a></letters>
+      {% endif %}
+      {% if letter.n %}
+        <a href="{% url 'minerals:search_letter_selected' pk="n" %}"><letters class="letters selected">N</a></letters>
+      {% endif %}
+      {% if not letter.n %}
       <a href="{% url 'minerals:search_letter_selected' pk="n" %}"><letters class="letters">N</a></letters>
+      {% endif %}
+      {% if letter.o %}
+        <a href="{% url 'minerals:search_letter_selected' pk="o" %}"><letters class="letters selected">O</a></letters>
+      {% endif %}
+      {% if not letter.o %}
       <a href="{% url 'minerals:search_letter_selected' pk="o" %}"><letters class="letters">O</a></letters>
+      {% endif %}
+      {% if letter.p %}
+        <a href="{% url 'minerals:search_letter_selected' pk="p" %}"><letters class="letters selected">P</a></letters>
+      {% endif %}
+      {% if not letter.p %}
       <a href="{% url 'minerals:search_letter_selected' pk="p" %}"><letters class="letters">P</a></letters>
+      {% endif %}
+      {% if letter.q %}
+        <a href="{% url 'minerals:search_letter_selected' pk="q" %}"><letters class="letters selected">Q</a></letters>
+      {% endif %}
+      {% if not letter.q %}
       <a href="{% url 'minerals:search_letter_selected' pk="q" %}"><letters class="letters">Q</a></letters>
+      {% endif %}
+      {% if letter.r %}
+        <a href="{% url 'minerals:search_letter_selected' pk="r" %}"><letters class="letters selected">R</a></letters>
+      {% endif %}
+      {% if not letter.r %}
       <a href="{% url 'minerals:search_letter_selected' pk="r" %}"><letters class="letters">R</a></letters>
+      {% endif %}
+      {% if letter.s %}
+        <a href="{% url 'minerals:search_letter_selected' pk="s" %}"><letters class="letters selected">S</a></letters>
+      {% endif %}
+      {% if not letter.s %}
       <a href="{% url 'minerals:search_letter_selected' pk="s" %}"><letters class="letters">S</a></letters>
+      {% endif %}
+      {% if letter.t %}
+        <a href="{% url 'minerals:search_letter_selected' pk="t" %}"><letters class="letters selected">T</a></letters>
+      {% endif %}
+      {% if not letter.t %}
       <a href="{% url 'minerals:search_letter_selected' pk="t" %}"><letters class="letters">T</a></letters>
+      {% endif %}
+      {% if letter.u %}
+        <a href="{% url 'minerals:search_letter_selected' pk="u" %}"><letters class="letters selected">U</a></letters>
+      {% endif %}
+      {% if not letter.u %}
       <a href="{% url 'minerals:search_letter_selected' pk="u" %}"><letters class="letters">U</a></letters>
+      {% endif %}
+      {% if letter.v %}
+        <a href="{% url 'minerals:search_letter_selected' pk="v" %}"><letters class="letters selected">V</a></letters>
+      {% endif %}
+      {% if not letter.v %}
       <a href="{% url 'minerals:search_letter_selected' pk="v" %}"><letters class="letters">V</a></letters>
+      {% endif %}
+      {% if letter.w %}
+        <a href="{% url 'minerals:search_letter_selected' pk="w" %}"><letters class="letters selected">W</a></letters>
+      {% endif %}
+      {% if not letter.w %}
       <a href="{% url 'minerals:search_letter_selected' pk="w" %}"><letters class="letters">W</a></letters>
+      {% endif %}
+      {% if letter.x %}
+        <a href="{% url 'minerals:search_letter_selected' pk="x" %}"><letters class="letters selected">X</a></letters>
+      {% endif %}
+      {% if not letter.x %}
       <a href="{% url 'minerals:search_letter_selected' pk="x" %}"><letters class="letters">X</a></letters>
+      {% endif %}
+      {% if letter.y %}
+        <a href="{% url 'minerals:search_letter_selected' pk="y" %}"><letters class="letters selected">Y</a></letters>
+      {% endif %}
+      {% if not letter.y %}
       <a href="{% url 'minerals:search_letter_selected' pk="y" %}"><letters class="letters">Y</a></letters>
+      {% endif %}
+      {% if letter.z %}
+        <a href="{% url 'minerals:search_letter_selected' pk="z" %}"><letters class="letters selected">Z</a></letters>
+      {% endif %}
+      {% if not letter.z %}
       <a href="{% url 'minerals:search_letter_selected' pk="z" %}"><letters class="letters">Z</a></letters>
+      {% endif %}
+      <!-- End search by letter list -->
 
       {% block content_title %}
       {% endblock content_title %}

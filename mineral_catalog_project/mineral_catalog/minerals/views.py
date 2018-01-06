@@ -129,10 +129,15 @@ def search_letter_selected(request, pk):
         (str(len(minerals)) + " results for the letter  "))
     content_end = (pk.title())
 
+    # This is to allow the user to see which group is selected in the
+    # group navagation bar.
+    letter = {}
+    letter['{}'.format(pk.lower())] = 'True'
+
     return render(
         request, 'minerals/mineral_list.html',
         {'minerals': minerals, 'content_title': content_title,
-         'content_end': content_end})
+         'content_end': content_end, 'letter': letter})
 
 
 def search_group(request):
@@ -144,6 +149,11 @@ def search_group(request):
 def search_group_selected(request, pk):
     '''This returns the search results for a group the user searched.'''
     minerals = Mineral.objects.all().filter(group__icontains=pk)
+
+    # This is to allow the user to see which group is selected in the
+    # group navagation bar.
+    group = {}
+    group['{}'.format(pk.lower())] = 'True'
 
     # This checks to see if the user is searching by Native Elements or
     # Organic Minerals and changes the pk name if so.
@@ -159,7 +169,7 @@ def search_group_selected(request, pk):
     return render(
         request, 'minerals/mineral_list.html',
         {'minerals': minerals, 'content_title': content_title,
-         'content_end': content_end})
+         'content_end': content_end, 'group': group})
 
 
 def search_term_selected(request):

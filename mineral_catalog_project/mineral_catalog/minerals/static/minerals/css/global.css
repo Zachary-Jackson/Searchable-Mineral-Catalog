@@ -245,3 +245,38 @@ float: none;
 background-color: white;
 border-radius: 10px;
 }
+
+.vertical__menu {
+  float: left;
+  position:relative;
+  height: auto;
+  width: 13%;
+}
+
+@media all and (max-width: 700px) {
+  .vertical__menu {display: none;}
+  .minerals__random {width: 100%;}
+}
+
+.vertical__menu a {
+    color: black;
+    display: block;
+    padding: 8px 10px;
+}
+
+.vertical__menu a:hover {
+    background-color: #d4d8d5;
+}
+
+.unselected {
+  background-color: white;
+}
+
+.selected {
+  background-color: #f4b042;
+  font-weight: bold;
+}
+
+.main__group {
+  background-color: #406b44
+}
